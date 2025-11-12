@@ -123,7 +123,10 @@ jobs:
         make download -j1 V=s
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
+        
+    - name: Install pyelftools
+      run: pip3 install pyelftools
+      
     - name: Compile Firmware
       id: compile
       run: |
